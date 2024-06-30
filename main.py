@@ -66,8 +66,11 @@ x_test_reshaped[:, :337] = x_test
 x_test_reshaped.shape
 x_test_pca = pca.transform(x_test_reshaped)
 
-#computing fisherfaces
-lda = LinearDiscriminantAnalysis()
+
+
+#Training with multilayer perceptron
+clf = MLPClassifier(random_state=1, hidden_layer_sizes=(10,10),max_iter=1000, verbose =True).fit(x_train,y_train)
+
 
 
 
